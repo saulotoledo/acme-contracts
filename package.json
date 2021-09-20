@@ -29,7 +29,8 @@
     "lint": "eslint src/*",
     "lint:fix": "eslint --fix src/*",
     "pre-commit": "lint-staged",
-    "commit": "cz"
+    "commit": "cz",
+    "sample-server": "json-server ./sample-server/db-generator.js --port 8080 --routes ./sample-server/routes.json --id contractId --delay 500"
   },
   "browserslist": {
     "production": [
@@ -47,6 +48,7 @@
     "@babel/core": "^7.15.5",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@types/faker": "^5.5.8",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "babel-eslint": "^10.1.0",
@@ -61,7 +63,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.3",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "faker": "^5.5.3",
     "husky": "^7.0.0",
+    "json-server": "^0.16.3",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1"
   },
