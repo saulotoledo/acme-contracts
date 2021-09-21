@@ -7,6 +7,7 @@ import {
   Theme,
   Typography,
 } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
@@ -51,9 +52,10 @@ const Page: React.FC<PageProps> = (props: PageProps) => {
           {actions?.map((action: Record<string, string>, key: number) => (
             <Button
               key={key}
+              component={RouterLink}
               variant="contained"
               color="primary"
-              href={action.link}
+              to={action.link}
             >
               {action.label}
             </Button>
