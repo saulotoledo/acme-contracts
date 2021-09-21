@@ -33,7 +33,7 @@
     "lint:fix": "eslint --fix src/*",
     "pre-commit": "lint-staged",
     "commit": "cz",
-    "sample-server": "json-server ./sample-server/db-generator.js --port 8080 --routes ./sample-server/routes.json --id contractId --delay 500"
+    "sample-server": "json-server ./sample-server/db-generator.js --port 8080 --middlewares ./sample-server/validator.js --routes ./sample-server/routes.json --id contractId --delay 500"
   },
   "browserslist": {
     "production": [
