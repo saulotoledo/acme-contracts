@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 import Contract from '../../interfaces/Contract';
 import StyledTableCell from './StyledTableCell';
 import StyledTableRow from './StyledTableRow';
-import ContractsService from '../../services/contracts.service';
+import { getContracts } from '../../services/ContractsService';
 import ContractsList from '../../interfaces/ContractsList';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -44,7 +44,7 @@ const ContractsTable: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    ContractsService.getContracts(page, rowsPerPage).then(
+    getContracts(page, rowsPerPage).then(
       (result: ContractsList) => {
         setItems(result.data);
         setTotal(result.total);

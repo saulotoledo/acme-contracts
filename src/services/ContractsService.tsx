@@ -4,7 +4,7 @@ import axios from '../axios';
 import Contract from '../interfaces/Contract';
 import ContractsList from '../interfaces/ContractsList';
 
-const getContract = async (id: string): Promise<Contract> =>
+export const getContract = async (id: string): Promise<Contract> =>
   new Promise(
     (
       // eslint-disable-next-line no-unused-vars
@@ -34,7 +34,7 @@ const getContract = async (id: string): Promise<Contract> =>
     }
   );
 
-const getContracts = async (
+export const getContracts = async (
   page: number,
   limit: number
 ): Promise<ContractsList> =>
@@ -69,7 +69,7 @@ const getContracts = async (
     }
   );
 
-const updateContract = async (data: Contract): Promise<Contract> =>
+export const updateContract = async (data: Contract): Promise<Contract> =>
   new Promise(
     (
       // eslint-disable-next-line no-unused-vars
@@ -89,11 +89,3 @@ const updateContract = async (data: Contract): Promise<Contract> =>
         }, reject);
     }
   );
-
-const ContractsService = {
-  getContract,
-  getContracts,
-  updateContract,
-};
-
-export default ContractsService;

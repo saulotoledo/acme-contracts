@@ -11,7 +11,7 @@ import { AxiosError } from 'axios';
 
 import Message from '../../interfaces/Message';
 import Contract from '../../interfaces/Contract';
-import ContractsService from '../../services/contracts.service';
+import { getContract, updateContract } from '../../services/ContractsService';
 import ContractForm from './ContractForm';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -50,7 +50,7 @@ const ContractEdit: React.FC<ContractEditProps> = ({
   useEffect(() => {
     setIsLoading(true);
     setMessage(undefined);
-    ContractsService.getContract(contractId).then(
+    getContract(contractId).then(
       (result: Contract) => {
         setContractData(result);
         setIsLoading(false);
@@ -67,7 +67,7 @@ const ContractEdit: React.FC<ContractEditProps> = ({
 
   const onSubmit = async (data: Contract): Promise<void> => {
     setMessage(undefined);
-    return ContractsService.updateContract(data).then(
+    return updateContract(data).then(
       (result): void => {
         setMessage({
           type: 'success',
