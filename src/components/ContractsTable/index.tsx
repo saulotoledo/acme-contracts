@@ -15,6 +15,7 @@ import {
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
 import { green } from '@material-ui/core/colors';
+import { Link } from 'react-router-dom';
 
 import Contract from '../../interfaces/Contract';
 import StyledTableCell from './StyledTableCell';
@@ -126,7 +127,9 @@ const ContractsTable: React.FC = () => {
               }) => (
                 <StyledTableRow key={contractId}>
                   <StyledTableCell>
-                    <Typography variant="body1">{contractId}</Typography>
+                    <Typography variant="body1">
+                      <Link to={`/contract/${contractId}`}>{contractId}</Link>
+                    </Typography>
                   </StyledTableCell>
                   <StyledTableCell>
                     <Typography variant="body1">{company}</Typography>
